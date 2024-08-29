@@ -132,19 +132,19 @@ class LotteriesTask extends Task {
 
     growthTask.sumPoint = await growth.getCurrentPoint();
 
-    const getProbabilityOfWinning = sumPoint => {
-      const pointCost = this.pointCost;
-      const luckyValueCost = 10;
-      const totalDrawsNumber = sumPoint / pointCost;
-      let supplyPoint = 0;
-      for (let i = 0, length = Math.floor(totalDrawsNumber * 0.65); i < length; i++) {
-        supplyPoint += Math.ceil(Math.random() * 100);
-      }
-      const luckyValue = ((sumPoint + supplyPoint) / pointCost) * luckyValueCost + dipLuckyTask.luckyValue;
-      return luckyValue / 6000;
-    };
+    // const getProbabilityOfWinning = sumPoint => {
+    //   const pointCost = this.pointCost;
+    //   const luckyValueCost = 10;
+    //   const totalDrawsNumber = sumPoint / pointCost;
+    //   let supplyPoint = 0;
+    //   for (let i = 0, length = Math.floor(totalDrawsNumber * 0.65); i < length; i++) {
+    //     supplyPoint += Math.ceil(Math.random() * 100);
+    //   }
+    //   const luckyValue = ((sumPoint + supplyPoint) / pointCost) * luckyValueCost + dipLuckyTask.luckyValue;
+    //   return luckyValue / 6000;
+    // };
 
-    this.luckyValueProbability = getProbabilityOfWinning(growthTask.sumPoint);
+    // this.luckyValueProbability = getProbabilityOfWinning(growthTask.sumPoint);
   }
 }
 
